@@ -8,11 +8,11 @@ FROM alpine:3.18.3
 RUN adduser -D -u 2025 delay
 WORKDIR /home/delay
 
-COPY --from=build /opt/delay-sample delay-sample
+COPY --from=build /opt/delay-app delay-app
 
-RUN chmod +x delay-sample
+RUN chmod +x delay-app
 
 USER 2025
 EXPOSE 3333
 
-ENTRYPOINT ["./delay-sample"]
+ENTRYPOINT ["./delay-app"]
